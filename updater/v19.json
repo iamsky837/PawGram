@@ -1,7 +1,7 @@
 {
   "Update": {
-    "Show": false,
-    "ForceUpdate": false,
+    "Show": true,
+    "ForceUpdate": true,
     "Version": "v20",
     "Changelog": "What's New:\n\n• Bug Fixed\n• Base Update\n• Ui Improvements",
     "GithubLink": "https://github.com/thepawdevs/PawGram",
