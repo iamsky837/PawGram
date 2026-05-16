@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore all PawGram features: refined design, native iOS emoji rendering, and optimized Android performance.">
+    <title>PawGram - Features</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="scrollProgress" aria-hidden="true"></div>
+
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <nav>
+        <a class="logo" href="index.html" aria-label="PawGram Home">
+            <img src="https://raw.githubusercontent.com/thepawdevs/PawGram/refs/heads/main/assets/pawgram_circle.png"
+                 alt="PawGram Logo" width="32" height="32">
+            PawGram
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="features.html" class="active"><i class="fa-solid fa-star"></i> Features</a>
+            <a href="download.html"><i class="fa-solid fa-download"></i> Download</a>
+            <a href="about-devs.html"><i class="fa-solid fa-users"></i> About Devs</a>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+        <a href="index.html" class="mob-link"><i class="fa-solid fa-house" style="color:var(--primary)"></i> Home</a>
+        <a href="features.html" class="mob-link active"><i class="fa-solid fa-star" style="color:var(--primary)"></i> Features</a>
+        <a href="download.html" class="mob-link"><i class="fa-solid fa-download" style="color:var(--primary)"></i> Download</a>
+        <a href="about-devs.html" class="mob-link"><i class="fa-solid fa-users" style="color:var(--primary)"></i> About Devs</a>
+    </div>
+
+    <header class="hero fade-up">
+        <div class="hero-badge">
+            <i class="fa-solid fa-star"></i> Feature Highlights
+        </div>
+        <h1>Everything that makes<br><span>PawGram</span> feel premium.</h1>
+        <p>Every feature is tuned for visual consistency, speed, and stability across Android devices.</p>
+    </header>
+
+    <section class="features">
+        <h2 class="section-title fade-up">Why choose PawGram?</h2>
+        <div class="grid">
+            <div class="card fade-up" style="transition-delay:.05s">
+                <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
+                <h3>Refined Aesthetics</h3>
+                <p>Enjoy the premium look and feel of iOS, optimized beautifully and cleanly for your Android screen.</p>
+            </div>
+            <div class="card fade-up" style="transition-delay:.10s">
+                <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Lightning Fast</h3>
+                <p>Rewritten resource handling means smoother scrolling, faster loading, and zero lag when browsing your feed.</p>
+            </div>
+            <div class="card fade-up" style="transition-delay:.15s">
+                <div class="card-icon"><i class="fa-solid fa-face-smile"></i></div>
+                <h3>Native iOS Emojis</h3>
+                <p>Express yourself exactly how you want. Built-in rendering ensures your emojis look perfectly consistent.</p>
+            </div>
+            <div class="card fade-up" style="transition-delay:.20s">
+                <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Rock-Solid Stability</h3>
+                <p>Say goodbye to unexpected crashes. Under-the-hood adjustments provide a seamless daily experience.</p>
+            </div>
+            <div class="card fade-up" style="transition-delay:.25s">
+                <div class="card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                <h3>Universal Compatibility</h3>
+                <p>Engineered to run flawlessly on both legacy and modern hardware, supporting 32-bit and 64-bit architectures.</p>
+            </div>
+            <div class="card fade-up" style="transition-delay:.30s">
+                <div class="card-icon"><i class="fa-solid fa-rotate"></i></div>
+                <h3>Community-Driven</h3>
+                <p>Continuous updates and improvements guided directly by active community feedback and testing.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="community fade-up">
+        <h2>Ready to try these features?</h2>
+        <p>Install the latest release and stay connected with updates from the team.</p>
+        <div class="btn-group">
+            <a href="download.html" class="btn btn-primary">
+                <i class="fa-solid fa-download"></i> Download PawGram
+            </a>
+            <a href="https://github.com/thepawdevs/PawGram" target="_blank" rel="noopener" class="btn btn-secondary">
+                <i class="fa-brands fa-github"></i> View Source
+            </a>
+        </div>
+    </section>
+
+    <footer class="fade-up">
+        <div class="footer-links">
+            <a href="https://thepawdevs.github.io/thepawdevs/" target="_blank" rel="noopener" class="btn btn-secondary">
+                <i class="fa-solid fa-globe"></i> PawDevs Official Site
+            </a>
+            <a href="https://github.com/thepawdevs/PawGram" target="_blank" rel="noopener" class="btn btn-secondary">
+                <i class="fa-brands fa-github"></i> GitHub Repository
+            </a>
+            <a href="https://t.me/PawDevs" target="_blank" rel="noopener" class="btn btn-secondary">
+                <i class="fa-brands fa-telegram"></i> Developer Group
+            </a>
+        </div>
+        <div class="footer-copy">
+            <p>Crafted with paw by PawDevs.</p>
+            <p>© 2026 PawDevs. PawGram is an independent community project and is not affiliated with Instagram or Meta Platforms, Inc.</p>
+        </div>
+    </footer>
+
+    <button id="scrollTop" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

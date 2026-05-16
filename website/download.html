@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download PawGram from official channels and access the latest Android builds.">
+    <title>PawGram - Download</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="scrollProgress" aria-hidden="true"></div>
+
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <nav>
+        <a class="logo" href="index.html" aria-label="PawGram Home">
+            <img src="https://raw.githubusercontent.com/thepawdevs/PawGram/refs/heads/main/assets/pawgram_circle.png"
+                 alt="PawGram Logo" width="32" height="32">
+            PawGram
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="features.html"><i class="fa-solid fa-star"></i> Features</a>
+            <a href="download.html" class="active"><i class="fa-solid fa-download"></i> Download</a>
+            <a href="about-devs.html"><i class="fa-solid fa-users"></i> About Devs</a>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+        <a href="index.html" class="mob-link"><i class="fa-solid fa-house" style="color:var(--primary)"></i> Home</a>
+        <a href="features.html" class="mob-link"><i class="fa-solid fa-star" style="color:var(--primary)"></i> Features</a>
+        <a href="download.html" class="mob-link active"><i class="fa-solid fa-download" style="color:var(--primary)"></i> Download</a>
+        <a href="about-devs.html" class="mob-link"><i class="fa-solid fa-users" style="color:var(--primary)"></i> About Devs</a>
+    </div>
+
+    <header class="hero fade-up">
+        <div class="hero-badge">
+            <i class="fa-solid fa-download"></i> Official Downloads
+        </div>
+        <h1>Install the latest<br><span>PawGram</span> build.</h1>
+        <p>Choose your preferred source and stay updated with stable releases and community announcements.</p>
+    </header>
+
+    <section class="features">
+        <h2 class="section-title fade-up">Download channels</h2>
+        <div class="grid">
+            <div class="card fade-up" style="transition-delay:.05s">
+                <div class="card-icon"><i class="fa-brands fa-telegram"></i></div>
+                <h3>Telegram Release Channel</h3>
+                <p>Fastest way to get the newest APK drops and release notes from the team.</p>
+                <div class="btn-group">
+                    <a href="https://t.me/pawgramapp" target="_blank" rel="noopener" class="btn btn-primary">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Channel
+                    </a>
+                </div>
+            </div>
+
+            <div class="card fade-up" style="transition-delay:.10s">
+                <div class="card-icon"><i class="fa-brands fa-github"></i></div>
+                <h3>GitHub Repository</h3>
+                <p>Track source changes, review release artifacts, and follow development progress.</p>
+                <div class="btn-group">
+                    <a href="https://github.com/thepawdevs/PawGram" target="_blank" rel="noopener" class="btn btn-secondary">
+                        <i class="fa-solid fa-code-branch"></i> View Repository
+                    </a>
+                </div>
+            </div>
+
+            <div class="card fade-up" style="transition-delay:.15s">
+                <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+                <h3>Developer Group</h3>
+                <p>Need support or want to report issues? Join the developer group and share details directly.</p>
+                <div class="btn-group">
+                    <a href="https://t.me/PawDevs" target="_blank" rel="noopener" class="btn btn-secondary">
+                        <i class="fa-brands fa-telegram"></i> Join Group
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="community fade-up">
+        <h2>Before you install</h2>
+        <p>Use trusted links above, keep your current app data backed up, and read release notes for compatibility changes.</p>
+        <a href="features.html" class="btn btn-primary">
+            <i class="fa-solid fa-star"></i> Review Features
+        </a>
+    </section>
+
+    <footer class="fade-up">
+        <div class="footer-links">
+            <a href="https://thepawdevs.github.io/thepawdevs/" target="_blank" rel="noopener" class="btn btn-secondary">
+                <i class="fa-solid fa-globe"></i> PawDevs Official Site
+            </a>
+            <a href="https://github.com/thepawdevs/PawGram" target="_blank" rel="noopener" class="btn btn-secondary">
+                <i class="fa-brands fa-github"></i> GitHub Repository
+            </a>
+            <a href="https://t.me/PawDevs" target="_blank" rel="noopener" class="btn btn-secondary">
+                <i class="fa-brands fa-telegram"></i> Developer Group
+            </a>
+        </div>
+        <div class="footer-copy">
+            <p>Crafted with paw by PawDevs.</p>
+            <p>© 2026 PawDevs. PawGram is an independent community project and is not affiliated with Instagram or Meta Platforms, Inc.</p>
+        </div>
+    </footer>
+
+    <button id="scrollTop" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
