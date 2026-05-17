@@ -1,0 +1,22 @@
+{
+  "version": "v22",
+  "title": "Base Update + iOS Emojis",
+  "base": "431.0.0.0.8",
+  "architecture": "armv7a + armv8a",
+  "changelogs": [
+    "Ads Removed",
+    "Clone Package Build",
+    "Config Folder Unlocked",
+    "Developer Options Enabled"
+  ],
+  "downloads": {
+    "v7a": {
+      "label": "v7a",
+      "url": "https://example.com/pawgram-v7a.apk"
+    },
+    "v8a": {
+      "label": "v8a",
+      "url": "https://example.com/pawgram-v8a.apk"
+    }
+  }
+}
