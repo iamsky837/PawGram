@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>PawGram</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#0b0b0f;
+    --card:#121218;
+    --card2:#171720;
+    --text:#ffffff;
+    --muted:#9ca3af;
+    --accent:#ff2d75;
+    --accent2:#ff6aa6;
+    --border:rgba(255,255,255,.08);
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left, rgba(255,45,117,.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255,106,166,.15), transparent 30%);
+    z-index:-1;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(16px);
+    background:rgba(10,10,14,.55);
+    border-bottom:1px solid var(--border);
+}
+
+.nav-wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:1.3rem;
+    font-weight:800;
+}
+
+.logo img{
+    width:42px;
+    height:42px;
+    border-radius:14px;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:var(--muted);
+    font-weight:500;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+.btn{
+    padding:12px 22px;
+    border-radius:14px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:#fff;
+    font-weight:700;
+    transition:.3s;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(255,45,117,.3);
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:90px;
+}
+
+.hero-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.hero-text h1{
+    font-size:4.2rem;
+    line-height:1.05;
+    margin-bottom:22px;
+    font-weight:800;
+}
+
+.gradient{
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+    color:var(--muted);
+    font-size:1.08rem;
+    line-height:1.8;
+    margin-bottom:32px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.secondary{
+    background:transparent;
+    border:1px solid var(--border);
+}
+
+.secondary:hover{
+    background:rgba(255,255,255,.04);
+}
+
+.hero-image{
+    position:relative;
+    display:flex;
+    justify-content:center;
+}
+
+.phone{
+    width:320px;
+    border-radius:42px;
+    border:1px solid var(--border);
+    background:linear-gradient(180deg,#1b1b24,#111116);
+    padding:16px;
+    box-shadow:
+    0 0 80px rgba(255,45,117,.15),
+    0 30px 80px rgba(0,0,0,.6);
+}
+
+.phone img{
+    width:100%;
+    border-radius:28px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(255,255,255,.05);
+    border:1px solid var(--border);
+    padding:10px 16px;
+    border-radius:999px;
+    margin-bottom:28px;
+    color:#fff;
+    font-size:.95rem;
+}
+
+.section{
+    padding:110px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-size:2.8rem;
+    margin-bottom:18px;
+}
+
+.section-title p{
+    color:var(--muted);
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.card{
+    background:linear-gradient(180deg,var(--card),var(--card2));
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:32px;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(255,45,117,.4);
+}
+
+.card-icon{
+    width:60px;
+    height:60px;
+    border-radius:18px;
+    background:rgba(255,45,117,.12);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.6rem;
+    margin-bottom:24px;
+}
+
+.card h3{
+    margin-bottom:14px;
+    font-size:1.3rem;
+}
+
+.card p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:30px;
+    border:1px solid var(--border);
+    transition:.35s;
+}
+
+.gallery img:hover{
+    transform:translateY(-8px);
+}
+
+.cta{
+    text-align:center;
+    padding:100px 30px;
+    background:linear-gradient(180deg,var(--card),var(--card2));
+    border-radius:40px;
+    border:1px solid var(--border);
+}
+
+.cta h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.cta p{
+    color:var(--muted);
+    max-width:700px;
+    margin:auto auto 35px;
+    line-height:1.8;
+}
+
+footer{
+    padding:50px 0;
+    border-top:1px solid var(--border);
+    margin-top:100px;
+}
+
+.footer-wrapper{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+    color:var(--muted);
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+@media(max-width:980px){
+
+.hero-wrapper{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+.features{
+    grid-template-columns:1fr 1fr;
+}
+
+.gallery{
+    grid-template-columns:1fr;
+}
+
+.hero-text h1{
+    font-size:3.2rem;
+}
+
+}
+
+@media(max-width:700px){
+
+.nav-links{
+    display:none;
+}
+
+.features{
+    grid-template-columns:1fr;
+}
+
+.hero-text h1{
+    font-size:2.6rem;
+}
+
+.section-title h2,
+.cta h2{
+    font-size:2.2rem;
+}
+
+.phone{
+    width:100%;
+    max-width:320px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="container nav-wrapper">
+
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/pawjects/PawGram/main/website/assets/logo.png">
+            PawGram
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#features">Features</a>
+            <a href="#preview">Preview</a>
+            <a href="https://github.com/pawjects/PawGram">GitHub</a>
+        </div>
+
+        <a href="https://github.com/pawjects/PawGram/releases" class="btn">
+            Download
+        </a>
+
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container hero-wrapper">
+
+        <div class="hero-text">
+
+            <div class="badge">
+                🐾 Modern Instagram Alpha Fork
+            </div>
+
+            <h1>
+                Experience Instagram
+                <span class="gradient">Better</span>
+            </h1>
+
+            <p>
+                PawGram is a refined Instagram fork built for speed,
+                customization, smooth performance, and a cleaner social
+                experience across both modern and legacy Android devices.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="https://github.com/pawjects/PawGram/releases" class="btn">
+                    Download APK
+                </a>
+
+                <a href="https://github.com/pawjects/PawGram" class="btn secondary">
+                    View Source
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <div class="phone">
+                <img src="https://raw.githubusercontent.com/pawjects/PawGram/main/website/assets/preview1.png">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="features">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Why Choose PawGram?</h2>
+            <p>
+                Crafted for users who want a faster, cleaner, and more customizable
+                Instagram experience without unnecessary bloat.
+            </p>
+        </div>
+
+        <div class="features">
+
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Optimized Performance</h3>
+                <p>
+                    Smooth scrolling, faster loading times, and improved responsiveness
+                    for both high-end and low-end Android devices.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎨</div>
+                <h3>Cleaner UI</h3>
+                <p>
+                    Modernized interface improvements with refined aesthetics and
+                    distraction-free navigation.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <h3>Ad-Free Experience</h3>
+                <p>
+                    Enjoy Instagram with reduced clutter and a cleaner content browsing
+                    experience.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🍎</div>
+                <h3>iOS Emojis</h3>
+                <p>
+                    Built-in iOS emoji support for a more premium and expressive
+                    chatting experience.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>Legacy Support</h3>
+                <p>
+                    Designed to work smoothly even on older Android versions and
+                    unsupported devices.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🐾</div>
+                <h3>Community Driven</h3>
+                <p>
+                    Open-source project maintained and improved by the PawDevs
+                    community.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="preview">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Application Preview</h2>
+            <p>
+                Elegant interface, optimized visuals, and a modern Instagram experience.
+            </p>
+        </div>
+
+        <div class="gallery">
+
+            <img src="https://raw.githubusercontent.com/pawjects/PawGram/main/website/assets/preview1.png">
+
+            <img src="https://raw.githubusercontent.com/pawjects/PawGram/main/website/assets/preview2.png">
+
+            <img src="https://raw.githubusercontent.com/pawjects/PawGram/main/website/assets/preview3.png">
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="cta">
+
+            <h2>Download PawGram Today</h2>
+
+            <p>
+                Upgrade your Instagram experience with improved performance,
+                enhanced customization, and a beautifully refined interface.
+            </p>
+
+            <a href="https://github.com/pawjects/PawGram/releases" class="btn">
+                Get Latest Release
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="container footer-wrapper">
+
+        <div>
+            © 2026 PawGram • Crafted with 🐾 by PawDevs
+        </div>
+
+        <div class="footer-links">
+            <a href="https://github.com/pawjects/PawGram">GitHub</a>
+            <a href="https://pawgram-meow.vercel.app/">Website</a>
+            <a href="https://t.me/PawDevs">Telegram</a>
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+  </html>
